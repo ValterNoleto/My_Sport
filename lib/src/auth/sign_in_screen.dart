@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import 'package:my_sport/src/auth/sign_up_screen.dart';
 import 'package:my_sport/src/config/custom_colors.dart';
 
 import 'components/custom_text_field.dart';
@@ -35,7 +36,7 @@ class SignInScreen extends StatelessWidget {
                           TextSpan(
                             text: 'My',
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -113,6 +114,10 @@ class SignInScreen extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
+                          side: const BorderSide(
+                            width: 2,
+                            color: Colors.black,
+                          ),
                         ),
                         onPressed: () {},
                         child: const Text(
@@ -175,7 +180,15 @@ class SignInScreen extends StatelessWidget {
                             color: CustomColors.customSwatchColor,
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (c) {
+                                return SignUpScreen();
+                              },
+                            ),
+                          );
+                        },
                         child: const Text(
                           'Criar conta',
                           style: TextStyle(

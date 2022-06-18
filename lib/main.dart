@@ -3,11 +3,11 @@ import 'package:my_sport/src/auth/sign_in_screen.dart';
 import 'package:my_sport/src/config/custom_colors.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MySport());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MySport extends StatelessWidget {
+  const MySport({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
