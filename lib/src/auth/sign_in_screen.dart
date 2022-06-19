@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_sport/src/auth/sign_up_screen.dart';
+import 'package:my_sport/src/base/base_screen.dart';
 import 'package:my_sport/src/config/custom_colors.dart';
 
 import 'components/custom_text_field.dart';
@@ -24,7 +25,7 @@ class SignInScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    //Nome do App
+                    //App name
                     const Text.rich(
                       TextSpan(
                         style: TextStyle(
@@ -49,7 +50,7 @@ class SignInScreen extends StatelessWidget {
                       ),
                     ),
 
-                    //Categorias do App
+                    //Apps categories
                     SizedBox(
                       height: 30,
                       child: DefaultTextStyle(
@@ -78,7 +79,7 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
 
-              //Formulário
+              //Form
               Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 32,
@@ -96,14 +97,14 @@ class SignInScreen extends StatelessWidget {
                       label: 'Email',
                     ),
 
-                    //Senha
+                    //Password
                     const CustomTextField(
                       icon: Icons.lock,
                       label: 'Senha',
                       isSecret: true,
                     ),
 
-                    //Botão de entrar
+                    //Enter button
                     SizedBox(
                       height: 50,
                       width: 100,
@@ -117,7 +118,12 @@ class SignInScreen extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute(builder: (c) {
+                            return const BaseScreen();
+                          }));
+                        },
                         child: const Text(
                           'Entrar',
                           style: TextStyle(
@@ -128,7 +134,7 @@ class SignInScreen extends StatelessWidget {
                       ),
                     ),
 
-                    //Esqueceu a senha
+                    //Forgot password
                     TextButton(
                       onPressed: () {},
                       child: const Text(
@@ -140,7 +146,7 @@ class SignInScreen extends StatelessWidget {
                       ),
                     ),
 
-                    //Divisor
+                    //Divider
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Row(
@@ -165,7 +171,7 @@ class SignInScreen extends StatelessWidget {
                       ),
                     ),
 
-                    //Cadastro
+                    //Registration
                     SizedBox(
                       height: 50,
                       child: OutlinedButton(

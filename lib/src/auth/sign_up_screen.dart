@@ -23,6 +23,8 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: CustomColors.customSwatchColor,
       body: SingleChildScrollView(
+
+        //Page text
         child: SizedBox(
           height: size.height,
           width: size.width,
@@ -43,7 +45,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ),
 
-                  //FOrmulário
+                  //Form
                   Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 32,
@@ -63,33 +65,33 @@ class SignUpScreen extends StatelessWidget {
                           label: 'Email',
                         ),
 
-                        //Senha
+                        //Password
                         const CustomTextField(
                           icon: Icons.lock_clock,
                           label: 'Senha',
                           isSecret: true,
                         ),
 
-                        //Confirmação de senha
+                        //Password confirmation
                         const CustomTextField(
                           icon: Icons.lock_rounded,
                           label: 'Confirme sua senha',
                           isSecret: true,
                         ),
 
-                        //Nome
+                        //Name
                         const CustomTextField(
                           icon: Icons.person,
                           label: 'Nome',
                         ),
 
-                        //Endereço
+                        //Address
                         const CustomTextField(
                           icon: Icons.home_filled,
                           label: 'Endereço',
                         ),
 
-                        //Celular
+                        //Phone
                         CustomTextField(
                           icon: Icons.phone,
                           label: 'Celular',
@@ -102,6 +104,8 @@ class SignUpScreen extends StatelessWidget {
                           label: 'CPF',
                           inputFormatters: [cpfFormatter],
                         ),
+
+                        //Registration Button
                         SizedBox(
                           height: 50,
                           width: 100,
@@ -130,6 +134,8 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ],
               ),
+
+              //Back button
               Positioned(
                 left: 5,
                 top: 10,
