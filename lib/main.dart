@@ -16,6 +16,7 @@ class MySport extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: CustomColors.customSwatchColor,
+        scaffoldBackgroundColor: Colors.white.withAlpha(190),
       ),
       debugShowCheckedModeBanner: false,
       home: const SignInScreen(),

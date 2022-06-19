@@ -14,7 +14,7 @@ class SignInScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: CustomColors.customSwatchColor,
+      backgroundColor: CustomColors.customConstractColor,
       body: SingleChildScrollView(
         child: SizedBox(
           height: size.height,
@@ -26,23 +26,23 @@ class SignInScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     //App name
-                    const Text.rich(
+                    Text.rich(
                       TextSpan(
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 40,
                         ),
                         children: [
                           TextSpan(
                             text: 'My',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: CustomColors.customSwatchColor,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           TextSpan(
                             text: 'Sport',
                             style: TextStyle(
-                              color: Colors.black,
+                              color: CustomColors.customSwatchColor,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -54,22 +54,22 @@ class SignInScreen extends StatelessWidget {
                     SizedBox(
                       height: 30,
                       child: DefaultTextStyle(
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: CustomColors.customSwatchColor,
                         ),
                         child: AnimatedTextKit(
                           pause: Duration.zero,
                           repeatForever: true,
                           animatedTexts: [
-                            FadeAnimatedText('Futebol'),
-                            FadeAnimatedText('Futsal'),
-                            FadeAnimatedText('Basquete'),
-                            FadeAnimatedText('Vôlei'),
+                            FadeAnimatedText('Camisas'),
+                            FadeAnimatedText('Chuteiras'),
                             FadeAnimatedText('Tênis'),
-                            FadeAnimatedText('UFC'),
-                            FadeAnimatedText('ESports'),
+                            FadeAnimatedText('Acessórios'),
+                            FadeAnimatedText('O que você precisar'),
+                            FadeAnimatedText('É aqui'),
+                            FadeAnimatedText('Na MySports!'),
                             FadeAnimatedText('Tudo em um só lugar!'),
                           ],
                         ),
