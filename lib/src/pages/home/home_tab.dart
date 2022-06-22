@@ -1,24 +1,18 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:my_sport/src/config/custom_colors.dart';
+import 'package:my_sport/src/pages/home/components/item_tile.dart';
 import 'components/category_tile.dart';
+import 'package:my_sport/src/config/app_data.dart' as app_data;
 
 class HomeTab extends StatefulWidget {
-  HomeTab({Key? key}) : super(key: key);
+  const HomeTab({Key? key}) : super(key: key);
 
   @override
   State<HomeTab> createState() => _HomeTabState();
 }
 
 class _HomeTabState extends State<HomeTab> {
-  List<String> categories = [
-    'Camisas',
-    'Chuteiras',
-    'Tênis',
-    'Acessórios',
-    'Suplementos',
-  ];
-
   String selectedCategory = 'Camisas';
 
   @override
@@ -111,7 +105,7 @@ class _HomeTabState extends State<HomeTab> {
 
           //Categories
           Container(
-            padding: const EdgeInsets.only(left: 25),
+            padding: const EdgeInsets.only(left: 45),
             height: 40,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
@@ -119,21 +113,38 @@ class _HomeTabState extends State<HomeTab> {
                 return CategoryTile(
                   onPressed: () {
                     setState(() {
-                      selectedCategory = categories[index];
+                      selectedCategory = app_data.categories[index];
                     });
                   },
-                  category: categories[index],
-                  isSelected: categories[index] == selectedCategory,
+                  category: app_data.categories[index],
+                  isSelected: app_data.categories[index] == selectedCategory,
                 );
               },
               separatorBuilder: (_, index) => const SizedBox(
                 width: 10,
               ),
-              itemCount: categories.length,
+              itemCount: app_data.categories.length,
             ),
-          )
+          ),
 
           //Grid
+          Expanded(
+            child: GridView.builder(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+              physics: const BouncingScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  childAspectRatio: 9 / 11.5),
+              itemCount: app_data.items.length,
+              itemBuilder: (_, index) {
+                return ItemTile(
+                  item: app_data.items[index],
+                );
+              },
+            ),
+          ),
         ],
       ),
     );

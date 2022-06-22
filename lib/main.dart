@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_sport/src/auth/sign_in_screen.dart';
 import 'package:my_sport/src/config/custom_colors.dart';
+import 'package:my_sport/src/pages/auth/sign_in_screen.dart';
 
 void main() {
   runApp(const MySport());

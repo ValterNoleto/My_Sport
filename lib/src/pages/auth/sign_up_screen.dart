@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:my_sport/src/auth/components/custom_text_field.dart';
 import 'package:my_sport/src/config/custom_colors.dart';
+
+import 'components/custom_text_field.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({Key? key}) : super(key: key);
@@ -144,9 +145,10 @@ class SignUpScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.arrow_circle_left_sharp,
                       size: 35,
+                      color: CustomColors.customSwatchColor,
                     ),
                   ),
                 ),
