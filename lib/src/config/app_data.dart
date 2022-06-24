@@ -1,3 +1,4 @@
+import 'package:my_sport/src/models/cart_item_model.dart';
 import 'package:my_sport/src/models/item_model.dart';
 
 ItemModel brasil = ItemModel(
@@ -17,36 +18,32 @@ ItemModel borussia = ItemModel(
 );
 
 ItemModel city = ItemModel(
-  description: 'Camisa do City 22/23',
-  imgUrl: 'assets/shirts/city.png',
-  price: 179.90,
-  itemName: 'Manchester City',
-  unity: 'und.'
-);
+    description: 'Camisa do City 22/23',
+    imgUrl: 'assets/shirts/city.png',
+    price: 179.90,
+    itemName: 'Manchester City',
+    unity: 'und.');
 
 ItemModel flamengo = ItemModel(
-  description: 'Camisa do Flamengo 2022',
-  imgUrl: 'assets/shirts/flamengo.png',
-  price: 179.90,
-  itemName: 'Flamengo',
-  unity: 'und.'
-);
+    description: 'Camisa do Flamengo 2022',
+    imgUrl: 'assets/shirts/flamengo.png',
+    price: 179.90,
+    itemName: 'Flamengo',
+    unity: 'und.');
 
 ItemModel santos = ItemModel(
-  description: 'Camisa do Santos 2022',
-  imgUrl: 'assets/shirts/santos.png',
-  price: 179.90,
-  itemName: 'Santos',
-  unity: 'und.'
-);
+    description: 'Camisa do Santos 2022',
+    imgUrl: 'assets/shirts/santos.png',
+    price: 179.90,
+    itemName: 'Santos',
+    unity: 'und.');
 
 ItemModel vasco = ItemModel(
-  description: 'Camisa do Vasco 2022',
-  imgUrl: 'assets/shirts/vasco.png',
-  price: 179.90,
-  itemName: 'Vasco',
-  unity: 'und.'
-);
+    description: 'Camisa do Vasco 2022',
+    imgUrl: 'assets/shirts/vasco.png',
+    price: 179.90,
+    itemName: 'Vasco',
+    unity: 'und.');
 
 List<ItemModel> items = [
   brasil,
@@ -58,8 +55,23 @@ List<ItemModel> items = [
 ];
 
 List<String> categories = [
-    'Camisas',
-    'Chuteiras',
-    'Tênis',
-    'Acessórios',
-  ];
+  'Camisas',
+  'Chuteiras',
+  'Tênis',
+  'Acessórios',
+];
+
+List<CartItemModel> cartItems = [
+  CartItemModel(
+    item: brasil,
+    quantity: 1,
+  ),
+  CartItemModel(
+    item: borussia,
+    quantity: 1,
+  ),
+  CartItemModel(
+    item: city,
+    quantity: 3,
+  ),
+];

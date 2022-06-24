@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:my_sport/src/config/custom_colors.dart';
 
-class QuantityWidgets extends StatelessWidget {
+class QuantityWidget extends StatelessWidget {
   final int value;
   final String suffixText;
   final Function(int quantity) result;
+  final bool isRemovable;
 
-  const QuantityWidgets({
+  const QuantityWidget({
     Key? key,
     required this.value,
     required this.suffixText,
     required this.result,
+    this.isRemovable = false,
   }) : super(key: key);
 
   @override
@@ -29,12 +31,14 @@ class QuantityWidgets extends StatelessWidget {
         ],
       ),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           _QuantityButton(
-            icon: Icons.remove,
-            color: Colors.grey,
+            icon:
+                !isRemovable || value > 1 ? Icons.remove : Icons.delete_forever,
+            color: !isRemovable || value > 1 ? Colors.grey : Colors.red,
             onPressed: () {
-              if (value == 1) return;
+              if (value == 1 && !isRemovable) return;
 
               int resultCount = value - 1;
               result(resultCount);

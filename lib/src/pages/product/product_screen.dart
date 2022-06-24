@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_sport/src/config/custom_colors.dart';
 import 'package:my_sport/src/models/item_model.dart';
-import 'package:my_sport/src/pages/commom_widgets/quantity_widgets.dart';
+import 'package:my_sport/src/pages/commom_widgets/quantity_widget.dart';
 import 'package:my_sport/src/services/utils_services.dart';
 
 class ProductScreen extends StatefulWidget {
-  ProductScreen({
+  const ProductScreen({
     Key? key,
     required this.item,
   }) : super(key: key);
@@ -69,7 +69,7 @@ class _ProductScreenState extends State<ProductScreen> {
                               ),
                             ),
                           ),
-                          QuantityWidgets(
+                          QuantityWidget(
                             value: cartItemQuantity,
                             suffixText: widget.item.unity,
                             result: (quantity) {
