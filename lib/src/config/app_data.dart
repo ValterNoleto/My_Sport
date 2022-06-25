@@ -1,5 +1,6 @@
 import 'package:my_sport/src/models/cart_item_model.dart';
 import 'package:my_sport/src/models/item_model.dart';
+import 'package:my_sport/src/models/user_model.dart';
 
 ItemModel brasil = ItemModel(
   description: 'Camisa do Brasil 2022',
@@ -75,3 +76,12 @@ List<CartItemModel> cartItems = [
     quantity: 3,
   ),
 ];
+
+UserModel user = UserModel(
+  phone: '86 999510634',
+  name: 'Valterlim Júnior',
+  address: 'Dirceu',
+  cpf: '06928352370',
+  email: 'valterlimjuniorr@gmail.com',
+  password: '',
+);
