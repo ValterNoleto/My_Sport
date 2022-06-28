@@ -1,5 +1,6 @@
 import 'package:my_sport/src/models/cart_item_model.dart';
 import 'package:my_sport/src/models/item_model.dart';
+import 'package:my_sport/src/models/order_model.dart';
 import 'package:my_sport/src/models/user_model.dart';
 
 ItemModel brasil = ItemModel(
@@ -85,3 +86,28 @@ UserModel user = UserModel(
   email: 'valterlimjuniorr@gmail.com',
   password: '',
 );
+
+List<OrderModel> orders = [
+  OrderModel(
+    id: 'asd6a54da6s2d1',
+    createdDateTime: DateTime.parse(
+      '2022-06-28 00:15:25.450',
+    ),
+    overdueDateTime: DateTime.parse(
+      '2022-06-28 00:15:25.450',
+    ),
+    items: [
+      CartItemModel(
+        item: brasil,
+        quantity: 2,
+      ),
+      CartItemModel(
+        item: city,
+        quantity: 2,
+      ),
+    ],
+    status: 'pending_payment',
+    copyAndPaste: 'q1w2e3r4t5y6',
+    total: 11.0,
+  ),
+];
