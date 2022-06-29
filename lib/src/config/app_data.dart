@@ -88,6 +88,7 @@ UserModel user = UserModel(
 );
 
 List<OrderModel> orders = [
+  //Request 01
   OrderModel(
     id: 'asd6a54da6s2d1',
     createdDateTime: DateTime.parse(
@@ -109,5 +110,25 @@ List<OrderModel> orders = [
     status: 'pending_payment',
     copyAndPaste: 'q1w2e3r4t5y6',
     total: 11.0,
+  ),
+
+  //Request 02
+  OrderModel(
+    id: 'a65s4d6a893se8',
+    createdDateTime: DateTime.parse(
+      '2022-06-28 00:15:25.450',
+    ),
+    overdueDateTime: DateTime.parse(
+      '2022-06-28 00:15:25.450',
+    ),
+    items: [
+      CartItemModel(
+        item: borussia,
+        quantity: 1,
+      ),
+    ],
+    status: 'refunded',
+    copyAndPaste: 'q1w2e3r4t5y6',
+    total: 11.5,
   ),
 ];
