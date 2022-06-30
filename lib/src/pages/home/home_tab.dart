@@ -2,8 +2,10 @@ import 'package:add_to_cart_animation/add_to_cart_animation.dart';
 import 'package:add_to_cart_animation/add_to_cart_icon.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:my_sport/src/config/custom_colors.dart';
 import 'package:my_sport/src/pages/home/components/item_tile.dart';
+import 'package:my_sport/src/services/utils_services.dart';
 import 'components/category_tile.dart';
 import 'package:my_sport/src/config/app_data.dart' as app_data;
 
@@ -24,6 +26,8 @@ class _HomeTabState extends State<HomeTab> {
   void itemSelectedCartAnimations(GlobalKey gkImage) {
     runAddToCardAnimation(gkImage);
   }
+
+  final UtilsServices utilsServices = UtilsServices();
 
   @override
   Widget build(BuildContext context) {
@@ -153,10 +157,11 @@ class _HomeTabState extends State<HomeTab> {
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                 physics: const BouncingScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10,
-                    childAspectRatio: 9 / 11.5),
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  childAspectRatio: 9 / 11.5,
+                ),
                 itemCount: app_data.items.length,
                 itemBuilder: (_, index) {
                   return ItemTile(

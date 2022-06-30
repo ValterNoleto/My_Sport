@@ -128,7 +128,27 @@ List<OrderModel> orders = [
       ),
     ],
     status: 'delivered',
-    copyAndPaste: 'q1w2e3r4t5y6',
+    copyAndPaste: 's58w3w21q83',
+    total: 11.5,
+  ),
+
+  //Request 03
+  OrderModel(
+    id: 'a897ds6sa29wd3',
+    createdDateTime: DateTime.parse(
+      '2020-06-28 00:15:25.450',
+    ),
+    overdueDateTime: DateTime.parse(
+      '2021-06-28 00:15:25.450',
+    ),
+    items: [
+      CartItemModel(
+        item: vasco,
+        quantity: 1,
+      ),
+    ],
+    status: 'refunded',
+    copyAndPaste: 'q596sw93s5',
     total: 11.5,
   ),
 ];
