@@ -5,6 +5,8 @@ import 'package:my_sport/src/pages/cart/components/cart_tile.dart';
 import 'package:my_sport/src/services/utils_services.dart';
 import 'package:my_sport/src/config/app_data.dart' as app_data;
 
+import '../commom_widgets/payment_dialog.dart';
+
 class CartTab extends StatefulWidget {
   const CartTab({Key? key}) : super(key: key);
 
@@ -104,7 +106,16 @@ class _CartTabState extends State<CartTab> {
                     onPressed: () async {
                       bool? result = await showOrderConfirmation();
 
-                      print(result);
+                      if (result ?? false) {
+                        showDialog(
+                          context: context,
+                          builder: (_) {
+                            return PaymentDialog(
+                              order: app_data.orders.first,
+                            );
+                          },
+                        );
+                      }
                     },
                     label: const Text(
                       'Finalizar pedido',

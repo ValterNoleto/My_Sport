@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_sport/src/models/cart_item_model.dart';
 import 'package:my_sport/src/models/order_model.dart';
+import 'package:my_sport/src/pages/commom_widgets/payment_dialog.dart';
 import 'package:my_sport/src/pages/orders/components/order_status_widget.dart';
 import 'package:my_sport/src/services/utils_services.dart';
 
@@ -112,7 +113,16 @@ class OrderTile extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (_) {
+                      return PaymentDialog(
+                        order: order,
+                      );
+                    },
+                  );
+                },
                 icon: Image.asset(
                   'assets/app_images/pix.png',
                   height: 18,
