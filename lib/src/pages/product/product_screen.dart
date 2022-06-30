@@ -107,8 +107,6 @@ class _ProductScreenState extends State<ProductScreen> {
                         ),
                       ),
 
-                      //Features
-
                       //Button
                       SizedBox(
                         height: 55,

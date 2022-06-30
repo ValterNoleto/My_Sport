@@ -11,7 +11,7 @@ class OrderStatusWidget extends StatelessWidget {
     'paid': 2,
     'preparing_purchase': 3,
     'shipping': 4,
-    'delivery': 5,
+    'delivered': 5,
   };
 
   int get currentStatus => allStatus[status]!;
@@ -24,26 +24,51 @@ class OrderStatusWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      const _StatusDot(
+        isActive: true,
+        title: 'Pedido confirmado',
+        backgroundcolor: null,
+      ),
+      const _CustomDivider(),
+      if (currentStatus == 1) ...[
         const _StatusDot(
           isActive: true,
-          title: 'Pedido confirmado',
+          title: 'Pix estornado',
+          backgroundcolor: Colors.orange,
+        ),
+      ] else if (isOverdue) ...[
+        const _StatusDot(
+          isActive: true,
+          title: 'Pagamento Pix vencido',
+          backgroundcolor: Colors.red,
+        ),
+      ] else ...[
+        _StatusDot(
+          isActive: currentStatus >= 2,
+          title: 'Pagamento',
           backgroundcolor: null,
         ),
         const _CustomDivider(),
-        if (currentStatus == 1) ...[
-          const _StatusDot(
-            isActive: true,
-            title: 'Pix estornado',
-            backgroundcolor: Colors.orange,
-          ),
-        ] else if(isOverdue) ...[
-            const _StatusDot(isActive: true, title: 'Pagamento Pix vencido', backgroundcolor: Colors.red,),
-          ]
-        ]
-    );
+        _StatusDot(
+          isActive: currentStatus >= 3,
+          title: 'Preparando',
+          backgroundcolor: null,
+        ),
+        const _CustomDivider(),
+        _StatusDot(
+          isActive: currentStatus >= 4,
+          title: 'Envio',
+          backgroundcolor: null,
+        ),
+        const _CustomDivider(),
+        _StatusDot(
+          isActive: currentStatus >= 5,
+          title: 'Entregue',
+          backgroundcolor: null,
+        ),
+      ],
+    ]);
   }
 }
 
